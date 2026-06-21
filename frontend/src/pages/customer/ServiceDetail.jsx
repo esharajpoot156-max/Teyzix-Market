@@ -176,7 +176,7 @@ export default function ServiceDetail() {
               {/* Provider */}
               <div className="flex items-center gap-3 mb-4">
                 <div
-                  style={{ backgroundColor: "#535DCA" }}
+                  style={{ backgroundColor: "#393c56" }}
                   className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold"
                 >
                   {service.providerId?.username?.charAt(0).toUpperCase()}
@@ -237,7 +237,7 @@ export default function ServiceDetail() {
                     >
                       <div className="flex items-center gap-3 mb-2">
                         <div
-                          style={{ backgroundColor: "#535DCA" }}
+                          style={{ backgroundColor: "#393c56" }}
                           className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold"
                         >
                           {review.customerId?.username?.charAt(0).toUpperCase()}
@@ -306,7 +306,7 @@ export default function ServiceDetail() {
                     />
                     <button
                       type="submit"
-                      style={{ backgroundColor: "#535DCA" }}
+                      style={{ backgroundColor: "#393c56" }}
                       className="text-white px-6 py-2 rounded-xl text-sm font-medium hover:opacity-90 transition"
                     >
                       Submit Review
@@ -322,7 +322,7 @@ export default function ServiceDetail() {
             <div className="sticky top-24 bg-white rounded-2xl border border-[#e5e0d8] overflow-hidden shadow-lg">
 
               {/* Price */}
-              <div style={{ backgroundColor: "#535DCA" }} className="p-5 text-white">
+              <div style={{ backgroundColor: "#393c56" }} className="p-5 text-white">
                 <p className="text-sm opacity-80 mb-1">Starting at</p>
                 <p className="text-3xl font-bold">${service.price}</p>
                 <div className="flex items-center gap-4 mt-3">
@@ -346,7 +346,7 @@ export default function ServiceDetail() {
                     </p>
                     <button
                       onClick={() => navigate("/dashboard")}
-                      style={{ backgroundColor: "#535DCA" }}
+                      style={{ backgroundColor: "#393c56" }}
                       className="w-full text-white py-2 rounded-xl text-sm font-medium hover:opacity-90 transition"
                     >
                       View My Requests
@@ -388,7 +388,7 @@ export default function ServiceDetail() {
                     />
                     <button
                       type="submit"
-                      style={{ backgroundColor: "#535DCA" }}
+                      style={{ backgroundColor: "#393c56" }}
                       className="w-full text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition hover:scale-[1.01]"
                     >
                       Send Request →
@@ -401,7 +401,7 @@ export default function ServiceDetail() {
                     </p>
                     <button
                       onClick={() => navigate("/login")}
-                      style={{ backgroundColor: "#535DCA" }}
+                      style={{ backgroundColor: "#393c56" }}
                       className="w-full text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition"
                     >
                       Login to Continue →
