@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "teyzix-market-production.up.railway.app",
-  withCredentials: true, // cookies automatically jayengi
+  baseURL: "https://teyzix-market-production.up.railway.app/api",
+  withCredentials: true,
 });
 
 export default axiosInstance;
