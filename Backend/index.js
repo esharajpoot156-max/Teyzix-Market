@@ -18,7 +18,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin: "teyzix-market.vercel.app", // ← Vercel URL 
+  origin: "https://teyzix-market.vercel.app",// ← Vercel URL 
   credentials: true,
 }));
 
