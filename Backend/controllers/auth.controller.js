@@ -60,13 +60,16 @@ export const login = async (req, res) => {
     // Password hide karo
     const { password: pass, ...userInfo } = user._doc;
 
-    // Cookie mein bhejo
+    // Cookie + Token dono bhejo
     res.cookie("accessToken", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
+      sameSite: "none",            // ← strict se none kiya
       maxAge: 7 * 24 * 60 * 60 * 1000,
-    }).status(200).json(userInfo);
+    }).status(200).json({
+      ...userInfo,
+      token,                       // ← Token add kiya
+    });
 
   } catch (err) {
     res.status(500).json({ message: err.message });

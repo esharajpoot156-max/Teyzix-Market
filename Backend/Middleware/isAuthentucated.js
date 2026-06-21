@@ -3,23 +3,23 @@ import User from "../models/user.model.js";
 
 // ✅ Check karo JWT token valid hai ya nahi
 export const verifyToken = async (req, res, next) => {
-    const token = req.cookies?.accessToken;
+  // Cookie se bhi lo — Header se bhi lo
+  const token =
+    req.cookies?.accessToken ||
+    req.headers.authorization?.split(" ")[1];
 
   if (!token) {
-    return res.status(401).json({ 
-        message: "Not authenticated!",
-        success: false });
-    }
-    try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        req.userId = decoded.id;
-        req.userRole = decoded.role;
-        next();
-    } catch (err) {
-        return res.status(403).json({
-            message: "Token is not valid!", 
-            success: false });
-        }
+    return res.status(401).json({ message: "Not authenticated!" });
+  }
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.userId   = decoded.id;
+    req.userRole = decoded.role;
+    next();
+  } catch (err) {
+    return res.status(403).json({ message: "Token is not valid!" });
+  }
 };
 
 // ✅ Sirf Provider access kar sakta hai
