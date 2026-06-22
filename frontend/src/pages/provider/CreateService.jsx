@@ -13,8 +13,6 @@ export default function CreateService() {
     deliveryTime: "",
     tags: "",
   });
-  const [images, setImages] = useState([]);
-  const [previews, setPreviews] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -32,40 +30,34 @@ export default function CreateService() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleImages = (e) => {
-    const files = Array.from(e.target.files);
-    setImages(files);
-    setPreviews(files.map((f) => URL.createObjectURL(f)));
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
     try {
-      const formData = new FormData();
-      formData.append("title",        form.title);
-      formData.append("description",  form.description);
-      formData.append("category",     form.category);
-      formData.append("price",        Number(form.price));
-      formData.append("deliveryTime", Number(form.deliveryTime));
-      formData.append("tags",         form.tags);
-      images.forEach((img) => formData.append("images", img));
-      await axiosInstance.post("/services", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      const serviceData = {
+        title:        form.title,
+        description:  form.description,
+        category:     form.category,
+        price:        Number(form.price),
+        deliveryTime: Number(form.deliveryTime),
+        tags:         form.tags,
+      };
+
+      await axiosInstance.post("/services", serviceData);
       navigate("/provider/dashboard");
     } catch (err) {
       setError(err.response?.data?.message || err.message || "Something went wrong!");
     } finally {
-    setLoading(false);}
+      setLoading(false);
+    }
   };
 
   return (
     <div style={{ backgroundColor: "#FCF5EE" }} className="min-h-screen">
 
       {/* Header */}
-      <div style={{ backgroundColor: "#393c56" }} className="px-6 py-8">
+      <div style={{ backgroundColor: "#535DCA" }} className="px-6 py-8">
         <div className="max-w-3xl mx-auto">
           <button
             onClick={() => navigate("/provider/dashboard")}
@@ -106,7 +98,7 @@ export default function CreateService() {
               placeholder="e.g. I will design a professional logo"
               required
               className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none"
-              onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #393c5640"}
+              onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #535DCA40"}
               onBlur={(e) => e.target.style.boxShadow = "none"}
             />
           </div>
@@ -120,11 +112,11 @@ export default function CreateService() {
               name="description"
               value={form.description}
               onChange={handleChange}
-              placeholder="Describe your service in detail — what you offer, process, and results..."
+              placeholder="Describe your service in detail..."
               rows={5}
               required
               className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none resize-none"
-              onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #393c5640"}
+              onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #535DCA40"}
               onBlur={(e) => e.target.style.boxShadow = "none"}
             />
             <p className="text-xs text-gray-400 mt-1 text-right">
@@ -144,11 +136,11 @@ export default function CreateService() {
                   type="button"
                   onClick={() => setForm({ ...form, category: cat.label })}
                   style={{
-                    backgroundColor: form.category === cat.label ? "#393c56" : "#fff",
+                    backgroundColor: form.category === cat.label ? "#535DCA" : "#fff",
                     color:           form.category === cat.label ? "#fff"    : "#1a1a2e",
-                    borderColor:     form.category === cat.label ? "#393c56" : "#e5e0d8",
+                    borderColor:     form.category === cat.label ? "#535DCA" : "#e5e0d8",
                   }}
-                  className="flex items-center gap-2 px-3 py-2 rounded-xl border text-sm font-medium transition-all hover:border-[#393c56]"
+                  className="flex items-center gap-2 px-3 py-2 rounded-xl border text-sm font-medium transition-all hover:border-[#535DCA]"
                 >
                   <span>{cat.emoji}</span>
                   <span className="text-xs">{cat.label}</span>
@@ -172,7 +164,7 @@ export default function CreateService() {
                 required
                 min="1"
                 className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none"
-                onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #393c5640"}
+                onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #535DCA40"}
                 onBlur={(e) => e.target.style.boxShadow = "none"}
               />
             </div>
@@ -189,7 +181,7 @@ export default function CreateService() {
                 required
                 min="1"
                 className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none"
-                onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #393c5640"}
+                onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #535DCA40"}
                 onBlur={(e) => e.target.style.boxShadow = "none"}
               />
             </div>
@@ -207,7 +199,7 @@ export default function CreateService() {
               onChange={handleChange}
               placeholder="e.g. logo, design, branding"
               className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none"
-              onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #393c5640"}
+              onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #535DCA40"}
               onBlur={(e) => e.target.style.boxShadow = "none"}
             />
             {form.tags && (
@@ -216,7 +208,7 @@ export default function CreateService() {
                   tag.trim() && (
                     <span
                       key={i}
-                      style={{ backgroundColor: "#393c5615", color: "#393c56" }}
+                      style={{ backgroundColor: "#535DCA15", color: "#535DCA" }}
                       className="text-xs px-2 py-1 rounded-full"
                     >
                       #{tag.trim()}
@@ -227,50 +219,12 @@ export default function CreateService() {
             )}
           </div>
 
-          {/* Images */}
-          <div className="bg-white rounded-2xl p-5 border border-[#e5e0d8]">
-            <label style={{ color: "#1a1a2e" }} className="block text-sm font-semibold mb-2">
-              🖼️ Service Images (max 5)
-            </label>
-            <label
-              style={{ borderColor: "#393c56", color: "#393c56" }}
-              className="cursor-pointer border-2 border-dashed rounded-xl p-6 flex flex-col items-center gap-2 hover:opacity-70 transition"
-            >
-              <span className="text-3xl">📸</span>
-              <span className="text-sm font-medium">Click to upload images</span>
-              <span className="text-xs text-gray-400">JPG, PNG supported</span>
-              <input
-                type="file"
-                accept="image/*"
-                multiple
-                onChange={handleImages}
-                className="hidden"
-              />
-            </label>
-
-            {/* Image Previews */}
-            {previews.length > 0 && (
-              <div className="grid grid-cols-3 gap-3 mt-3">
-                {previews.map((src, i) => (
-                  <div key={i} className="relative rounded-xl overflow-hidden h-24">
-                    <img src={src} alt="" className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
-                      <span className="text-white text-xs font-medium">
-                        Image {i + 1}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-
           {/* Buttons */}
           <div className="flex gap-3">
             <button
               type="button"
               onClick={() => navigate("/provider/dashboard")}
-              style={{ borderColor: "#393c56", color: "#393c56" }}
+              style={{ borderColor: "#535DCA", color: "#535DCA" }}
               className="flex-1 border-2 py-3 rounded-xl text-sm font-semibold hover:opacity-70 transition"
             >
               Cancel
@@ -278,7 +232,7 @@ export default function CreateService() {
             <button
               type="submit"
               disabled={loading}
-              style={{ backgroundColor: "#393c56" }}
+              style={{ backgroundColor: "#535DCA" }}
               className="flex-1 text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition hover:scale-[1.01]"
             >
               {loading ? (
