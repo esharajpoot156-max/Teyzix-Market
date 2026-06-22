@@ -38,7 +38,7 @@ app.use("/api/requests",requestRoute);
 app.use("/api/reviews",reviewRoute);
 app.use("/api/profiles",profileRoute);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 const startServer = async () => {
   await connectDB();
