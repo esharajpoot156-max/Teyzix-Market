@@ -47,21 +47,18 @@ export default function CreateService() {
       formData.append("title",        form.title);
       formData.append("description",  form.description);
       formData.append("category",     form.category);
-      formData.append("price",        form.price);
-      formData.append("deliveryTime", form.deliveryTime);
+      formData.append("price",        Number(form.price));
+      formData.append("deliveryTime", Number(form.deliveryTime));
       formData.append("tags",         form.tags);
       images.forEach((img) => formData.append("images", img));
-
       await axiosInstance.post("/services", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-
       navigate("/provider/dashboard");
     } catch (err) {
-      setError(err.response?.data?.message || "Something went wrong!");
+      setError(err.response?.data?.message || err.message || "Something went wrong!");
     } finally {
-      setLoading(false);
-    }
+    setLoading(false);}
   };
 
   return (
