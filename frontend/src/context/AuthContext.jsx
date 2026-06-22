@@ -8,20 +8,17 @@ export const AuthProvider = ({ children }) => {
     JSON.parse(localStorage.getItem("user")) || null
   );
 
-  // Register
   const register = async (data) => {
     const res = await axiosInstance.post("/auth/register", data);
     return res.data;
   };
 
-  // Login
   const login = async (data) => {
     const res = await axiosInstance.post("/auth/login", data);
     localStorage.setItem("user", JSON.stringify(res.data));
     setUser(res.data);
   };
 
-  // Logout
   const logout = async () => {
     await axiosInstance.post("/auth/logout");
     localStorage.removeItem("user");
