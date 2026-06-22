@@ -57,7 +57,7 @@ export default function CreateService() {
     <div style={{ backgroundColor: "#FCF5EE" }} className="min-h-screen">
 
       {/* Header */}
-      <div style={{ backgroundColor: "#535DCA" }} className="px-6 py-8">
+      <div style={{ backgroundColor: "#393c56" }} className="px-6 py-8">
         <div className="max-w-3xl mx-auto">
           <button
             onClick={() => navigate("/provider/dashboard")}
@@ -136,9 +136,9 @@ export default function CreateService() {
                   type="button"
                   onClick={() => setForm({ ...form, category: cat.label })}
                   style={{
-                    backgroundColor: form.category === cat.label ? "#535DCA" : "#fff",
+                    backgroundColor: form.category === cat.label ? "#393c56" : "#fff",
                     color:           form.category === cat.label ? "#fff"    : "#1a1a2e",
-                    borderColor:     form.category === cat.label ? "#535DCA" : "#e5e0d8",
+                    borderColor:     form.category === cat.label ? "#393c56" : "#e5e0d8",
                   }}
                   className="flex items-center gap-2 px-3 py-2 rounded-xl border text-sm font-medium transition-all hover:border-[#535DCA]"
                 >
@@ -208,7 +208,7 @@ export default function CreateService() {
                   tag.trim() && (
                     <span
                       key={i}
-                      style={{ backgroundColor: "#535DCA15", color: "#535DCA" }}
+                      style={{ backgroundColor: "#535DCA15", color: "#393c56" }}
                       className="text-xs px-2 py-1 rounded-full"
                     >
                       #{tag.trim()}
@@ -224,7 +224,7 @@ export default function CreateService() {
             <button
               type="button"
               onClick={() => navigate("/provider/dashboard")}
-              style={{ borderColor: "#535DCA", color: "#535DCA" }}
+              style={{ borderColor: "#393c56", color: "#393c56" }}
               className="flex-1 border-2 py-3 rounded-xl text-sm font-semibold hover:opacity-70 transition"
             >
               Cancel
@@ -232,7 +232,7 @@ export default function CreateService() {
             <button
               type="submit"
               disabled={loading}
-              style={{ backgroundColor: "#535DCA" }}
+              style={{ backgroundColor: "#393c56" }}
               className="flex-1 text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition hover:scale-[1.01]"
             >
               {loading ? (
