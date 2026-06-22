@@ -1,9 +1,7 @@
 import jwt from "jsonwebtoken";
-import User from "../models/user.model.js";
+import { User } from "../models/user.model.js";
 
-// ✅ Check karo JWT token valid hai ya nahi
 export const verifyToken = async (req, res, next) => {
-  // Cookie se bhi lo — Header se bhi lo
   const token =
     req.cookies?.accessToken ||
     req.headers.authorization?.split(" ")[1];
@@ -22,34 +20,32 @@ export const verifyToken = async (req, res, next) => {
   }
 };
 
-// ✅ Sirf Provider access kar sakta hai
 export const verifyProvider = async (req, res, next) => {
-    await verifyToken(req, res, async () => {
-        if (req.userRole === "provider" || req.userRole === "admin") {
-            next();
-        } else {
-            return res.status(403).json({ message: "Only providers allowed!" });
-        }});
+  await verifyToken(req, res, async () => {
+    if (req.userRole === "provider" || req.userRole === "admin") {
+      next();
+    } else {
+      return res.status(403).json({ message: "Only providers allowed!" });
+    }
+  });
 };
 
-// ✅ Sirf Customer access kar sakta hai
 export const verifyCustomer = async (req, res, next) => {
-    await verifyToken(req, res, async () => {
-        if (req.userRole === "customer" || req.userRole === "admin") {
-            next();
-        } else {
-            return res.status(403).json({ message: "Only customers allowed!" })
-        }
-    });
+  await verifyToken(req, res, async () => {
+    if (req.userRole === "customer" || req.userRole === "admin") {
+      next();
+    } else {
+      return res.status(403).json({ message: "Only customers allowed!" });
+    }
+  });
 };
 
-// ✅ Sirf Admin access kar sakta hai
 export const verifyAdmin = async (req, res, next) => {
-    await verifyToken(req, res, async () => {
-        if (req.userRole === "admin") {
-            next();
-        } else {
-            return res.status(403).json({ message: "Only admin allowed!" })
-        }
-    });
+  await verifyToken(req, res, async () => {
+    if (req.userRole === "admin") {
+      next();
+    } else {
+      return res.status(403).json({ message: "Only admin allowed!" });
+    }
+  });
 };

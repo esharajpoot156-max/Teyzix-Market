@@ -2,12 +2,8 @@ import axios from "axios";
 
 const axiosInstance = axios.create({
   baseURL: "https://teyzix-market-production.up.railway.app/api",
-  withCredentials: true,
+  withCredentials: false,
 });
-
-export default axiosInstance;
-
-//attach token auto
 
 axiosInstance.interceptors.request.use((config) => {
   const user = JSON.parse(localStorage.getItem("user"));

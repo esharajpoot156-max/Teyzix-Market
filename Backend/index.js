@@ -17,11 +17,18 @@ const app = express();
 // Middleware
 
 app.use(express.json());
-app.use(cors({
-  origin: "https://teyzix-market.vercel.app",// ← Vercel URL 
-  credentials: true,
-}));
-
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5174",
+      "https://teyzix-market.vercel.app",
+    ],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 app.use(cookieParser());
 //Api's
 app.use("/api/auth",authRoute);
