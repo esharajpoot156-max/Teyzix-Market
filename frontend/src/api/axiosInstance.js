@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://teyzix-market-production.up.railway.app/api",
+  baseURL: "https://teyzix-market-backend.vercel.app/api",
   withCredentials: false,
 });
 
