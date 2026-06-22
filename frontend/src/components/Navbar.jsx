@@ -52,7 +52,7 @@ export default function Navbar() {
 
   return (
     <nav
-      style={{ backgroundColor: "#eeeeed" }}
+      style={{ backgroundColor: "#ffffff" }}
       className={`sticky top-0 z-50 border-b border-[#e5e0d8] transition-all duration-300 ${
         scrolled ? "shadow-lg" : "shadow-none"
       }`}
@@ -62,7 +62,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
           <div
-            style={{ backgroundColor: "#393c56" }}
+            style={{ backgroundColor: "#151c5c" }}
             className="w-9 h-9 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300"
           >
             <span className="text-white font-bold text-lg">T</span>
@@ -78,7 +78,7 @@ export default function Navbar() {
             </span>
             {/* Cursor */}
             <span
-              style={{ color: "#393c56" }}
+              style={{ color: "#151c5c" }}
               className="animate-pulse"
             >
               |
@@ -95,7 +95,7 @@ export default function Navbar() {
             Browse
             {/* Underline animation */}
             <span
-              style={{ backgroundColor: "#393c56" }}
+              style={{ backgroundColor: "#151c5c" }}
               className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300"
             />
           </Link>
@@ -104,14 +104,14 @@ export default function Navbar() {
             <>
               <Link
                 to="/login"
-                style={{ color: "#393c56" }}
+                style={{ color: "#151c5c" }}
                 className="text-sm font-semibold hover:opacity-70 transition"
               >
                 Login
               </Link>
               <Link
                 to="/register"
-                style={{ backgroundColor: "#393c56" }}
+                style={{ backgroundColor: "#151c5c" }}
                 className="text-sm text-white px-5 py-2 rounded-xl shadow hover:opacity-90 hover:scale-105 hover:shadow-lg transition-all duration-200 font-medium btn-primary"
               >
                 Get Started →
@@ -129,7 +129,7 @@ export default function Navbar() {
                 >
                   Dashboard
                   <span
-                    style={{ backgroundColor: "#393c56" }}
+                    style={{ backgroundColor: "#151c5c" }}
                     className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300"
                   />
                 </Link>
@@ -144,13 +144,13 @@ export default function Navbar() {
                   >
                     Dashboard
                     <span
-                      style={{ backgroundColor: "#393c56" }}
+                      style={{ backgroundColor: "#151c5c" }}
                       className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300"
                     />
                   </Link>
                   <Link
                     to="/provider/services/new"
-                    style={{ backgroundColor: "#393c56" }}
+                    style={{ backgroundColor: "#151c5c" }}
                     className="text-sm text-white px-4 py-2 rounded-xl shadow hover:opacity-90 hover:scale-105 transition-all duration-200 font-medium btn-primary"
                   >
                     + Add Service
@@ -166,7 +166,7 @@ export default function Navbar() {
                 >
                   Admin Panel
                   <span
-                    style={{ backgroundColor: "#393c56" }}
+                    style={{ backgroundColor: "#151c5c" }}
                     className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300"
                   />
                 </Link>
@@ -186,7 +186,7 @@ export default function Navbar() {
                     />
                   ) : (
                     <div
-                      style={{ backgroundColor: "#393c56" }}
+                      style={{ backgroundColor: "#151c5c" }}
                       className="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm shadow hover:scale-110 transition"
                     >
                       {user?.username?.charAt(0).toUpperCase()}
@@ -196,7 +196,7 @@ export default function Navbar() {
                     {user?.username}
                   </span>
                   <svg
-                    style={{ color: "#393c56" }}
+                    style={{ color: "#151c5c" }}
                     className={`w-4 h-4 transition-transform duration-300 ${dropdownOpen ? "rotate-180" : ""}`}
                     fill="none" stroke="currentColor" viewBox="0 0 24 24"
                   >
@@ -216,7 +216,7 @@ export default function Navbar() {
                       </p>
                       <p className="text-xs text-gray-400">{user?.email}</p>
                       <span
-                        style={{ backgroundColor: "#535DCA20", color: "#393c56" }}
+                        style={{ backgroundColor: "#535DCA20", color: "#151c5c" }}
                         className="text-xs px-2 py-0.5 rounded-full mt-1 inline-block font-medium"
                       >
                         {user?.role}
@@ -226,7 +226,7 @@ export default function Navbar() {
                     <Link
                       to="/profile"
                       onClick={() => setDropdownOpen(false)}
-                      className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[#eeeeed] transition"
+                      className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[#ffffff] transition"
                       style={{ color: "#1a1a2e" }}
                     >
                       <span>👤</span> My Profile
@@ -236,7 +236,7 @@ export default function Navbar() {
                       <Link
                         to="/dashboard"
                         onClick={() => setDropdownOpen(false)}
-                        className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[#eeeeed] transition"
+                        className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[#ffffff] transition"
                         style={{ color: "#1a1a2e" }}
                       >
                         <span>📋</span> My Requests
@@ -247,7 +247,7 @@ export default function Navbar() {
                       <Link
                         to="/provider/dashboard"
                         onClick={() => setDropdownOpen(false)}
-                        className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[#eeeeed] transition"
+                        className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[#ffffff] transition"
                         style={{ color: "#1a1a2e" }}
                       >
                         <span>💼</span> My Projects
@@ -275,15 +275,15 @@ export default function Navbar() {
           className="md:hidden flex flex-col gap-1.5 p-2"
         >
           <span
-            style={{ backgroundColor: "#393c56" }}
+            style={{ backgroundColor: "#151c5c" }}
             className={`block w-6 h-0.5 transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
           />
           <span
-            style={{ backgroundColor: "#393c56" }}
+            style={{ backgroundColor: "#151c5c" }}
             className={`block w-6 h-0.5 transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : ""}`}
           />
           <span
-            style={{ backgroundColor: "#393c56" }}
+            style={{ backgroundColor: "#151c5c" }}
             className={`block w-6 h-0.5 transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
           />
         </button>
@@ -291,7 +291,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        style={{ backgroundColor: "#eeeeed", borderColor: "#e5e0d8" }}
+        style={{ backgroundColor: "#ffffff", borderColor: "#e5e0d8" }}
         className={`md:hidden border-t px-6 overflow-hidden transition-all duration-300 ${
           menuOpen ? "max-h-96 py-4" : "max-h-0"
         }`}
@@ -302,13 +302,13 @@ export default function Navbar() {
           </Link>
           {!user && (
             <>
-              <Link to="/login" onClick={() => setMenuOpen(false)} style={{ color: "#393c56" }} className="text-sm font-semibold">
+              <Link to="/login" onClick={() => setMenuOpen(false)} style={{ color: "#151c5c" }} className="text-sm font-semibold">
                 Login
               </Link>
               <Link
                 to="/register"
                 onClick={() => setMenuOpen(false)}
-                style={{ backgroundColor: "#393c56" }}
+                style={{ backgroundColor: "#151c5c" }}
                 className="text-sm text-white px-4 py-2 rounded-xl text-center font-medium"
               >
                 Get Started →
@@ -333,7 +333,7 @@ export default function Navbar() {
                   <Link
                     to="/provider/services/new"
                     onClick={() => setMenuOpen(false)}
-                    style={{ backgroundColor: "#393c56" }}
+                    style={{ backgroundColor: "#151c5c" }}
                     className="text-sm text-white px-4 py-2 rounded-xl text-center"
                   >
                     + Add Service

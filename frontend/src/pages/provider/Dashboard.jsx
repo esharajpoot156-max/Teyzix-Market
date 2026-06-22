@@ -87,10 +87,10 @@ export default function ProviderDashboard() {
   const earnings  = delivered.reduce((sum, r) => sum + r.budget, 0);
 
   return (
-    <div style={{ backgroundColor: "#eeeeed" }} className="min-h-screen">
+    <div style={{ backgroundColor: "#ffffff" }} className="min-h-screen">
 
       {/* Header Banner */}
-      <div style={{ backgroundColor: "#393c56" }} className="px-6 py-8">
+        <div style={{ backgroundColor: "#151c5c" }} className="px-6 py-8">
         <div className="max-w-5xl mx-auto">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-4">
@@ -107,7 +107,7 @@ export default function ProviderDashboard() {
             <button
               onClick={() => navigate("/provider/services/new")}
               className="bg-white text-sm font-semibold px-5 py-2 rounded-xl hover:opacity-90 transition"
-              style={{ color: "#393c56" }}
+                style={{ color: "#151c5c" }}
             >
               + Add Service
             </button>
@@ -145,7 +145,7 @@ export default function ProviderDashboard() {
               key={tab}
               onClick={() => setActiveTab(tab)}
               style={{
-                backgroundColor: activeTab === tab ? "#393c56" : "transparent",
+                backgroundColor: activeTab === tab ? "#151c5c" : "transparent",
                 color: activeTab === tab ? "#fff" : "#6b7280",
               }}
               className="px-5 py-2 rounded-xl text-sm font-medium transition-all capitalize"
@@ -158,7 +158,7 @@ export default function ProviderDashboard() {
         {loading ? (
           <div className="flex justify-center py-20">
             <div
-              style={{ borderColor: "#393c56" }}
+              style={{ borderColor: "#151c5c" }}
               className="w-10 h-10 border-4 border-t-transparent rounded-full animate-spin"
             />
           </div>
@@ -185,7 +185,7 @@ export default function ProviderDashboard() {
                   <div className="flex justify-between items-start mb-4">
                     <div className="flex gap-4">
                       <div
-                        style={{ backgroundColor: "#393c5615" }}
+                        style={{ backgroundColor: "#151c5c15" }}
                         className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl flex-shrink-0"
                       >
                         👤
@@ -219,7 +219,7 @@ export default function ProviderDashboard() {
 
                   {/* Requirements */}
                   <div
-                    style={{ backgroundColor: "#eeeeed" }}
+                    style={{ backgroundColor: "#ffffff" }}
                     className="rounded-xl p-3 mb-4"
                   >
                     <p className="text-xs text-gray-500 font-medium mb-1">Requirements:</p>
@@ -241,7 +241,7 @@ export default function ProviderDashboard() {
                     <div className="w-full bg-gray-100 rounded-full h-2">
                       <div
                         style={{
-                          backgroundColor: "#393c56",
+                          backgroundColor: "#151c5c",
                           width:
                             req.status === "Pending"     ? "20%" :
                             req.status === "Accepted"    ? "40%" :
@@ -258,7 +258,7 @@ export default function ProviderDashboard() {
                   {nextStatus(req.status) && (
                     <button
                       onClick={() => updateStatus(req._id, nextStatus(req.status))}
-                      style={{ backgroundColor: "#393c56" }}
+                      style={{ backgroundColor: "#151c5c" }}
                       className="text-white text-xs px-4 py-2 rounded-xl hover:opacity-90 transition font-medium"
                     >
                       Mark as {nextStatus(req.status)} →
@@ -283,7 +283,7 @@ export default function ProviderDashboard() {
               </p>
               <button
                 onClick={() => navigate("/provider/services/new")}
-                style={{ backgroundColor: "#393c56" }}
+                style={{ backgroundColor: "#151c5c" }}
                 className="text-white px-6 py-3 rounded-xl font-medium text-sm hover:opacity-90 transition"
               >
                 + Add Service →
@@ -305,7 +305,7 @@ export default function ProviderDashboard() {
                     />
                   ) : (
                     <div
-                      style={{ backgroundColor: "#393c5615" }}
+                      style={{ backgroundColor: "#151c5c15" }}
                       className="w-full h-36 flex items-center justify-center text-4xl"
                     >
                       💼
@@ -318,19 +318,19 @@ export default function ProviderDashboard() {
                     </h3>
                     <div className="flex justify-between items-center mb-3">
                       <span
-                        style={{ backgroundColor: "#393c5615", color: "#393c56" }}
+                        style={{ backgroundColor: "#151c5c15", color: "#151c5c" }}
                         className="text-xs px-2 py-1 rounded-lg"
                       >
                         {service.category}
                       </span>
-                      <span style={{ color: "#393c56" }} className="font-bold text-sm">
+                      <span style={{ color: "#151c5c" }} className="font-bold text-sm">
                         ${service.price}
                       </span>
                     </div>
                     <div className="flex gap-2">
                       <button
                         onClick={() => navigate(`/services/${service._id}`)}
-                        style={{ borderColor: "#393c56", color: "#393c56" }}
+                        style={{ borderColor: "#151c5c", color: "#151c5c" }}
                         className="flex-1 text-xs py-2 rounded-xl border font-medium hover:opacity-70 transition"
                       >
                         View

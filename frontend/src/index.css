@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-color: #eeeeed;
+  background-color: #ffffff;
   font-family: 'Inter', sans-serif;
 }
 
@@ -90,7 +90,7 @@ html {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #393c56, #8B93E8);
+  background: linear-gradient(135deg, #151c5c, #8B93E8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

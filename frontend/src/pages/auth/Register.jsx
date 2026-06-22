@@ -37,14 +37,14 @@ export default function Register() {
 
   return (
     <div
-      style={{ backgroundColor: "#eeeeed" }}
+      style={{ backgroundColor: "#ffffff" }}
       className="min-h-screen flex items-center justify-center px-4 py-8"
     >
       <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 shadow-2xl rounded-3xl overflow-hidden">
 
         {/* Left Side */}
         <div
-          style={{ backgroundColor: "#393c56" }}
+          style={{ backgroundColor: "#151c5c" }}
           className="hidden md:flex flex-col justify-between p-10 text-white"
         >
           {/* Logo */}
@@ -121,7 +121,7 @@ export default function Register() {
                   placeholder="Your username"
                   required
                   className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none"
-                  onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #393c5640"}
+                  onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #151c5c40"}
                   onBlur={(e) => e.target.style.boxShadow = "none"}
                 />
               </div>
@@ -142,7 +142,7 @@ export default function Register() {
                   placeholder="you@example.com"
                   required
                   className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none"
-                  onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #393c5640"}
+                  onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #151c5c40"}
                   onBlur={(e) => e.target.style.boxShadow = "none"}
                 />
               </div>
@@ -163,7 +163,7 @@ export default function Register() {
                   placeholder="Min 6 characters"
                   required
                   className="w-full pl-10 pr-10 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none"
-                  onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #393c5640"}
+                  onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #151c5c40"}
                   onBlur={(e) => e.target.style.boxShadow = "none"}
                 />
                 <button
@@ -191,7 +191,7 @@ export default function Register() {
                   placeholder="03001234567"
                   required
                   className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none"
-                  onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #393c5640"}
+                  onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #151c5c40"}
                   onBlur={(e) => e.target.style.boxShadow = "none"}
                 />
               </div>
@@ -203,9 +203,9 @@ export default function Register() {
                 type="button"
                 onClick={() => setForm({ ...form, isSeller: false })}
                 style={{
-                  borderColor: !form.isSeller ? "#393c56" : "#e5e7eb",
-                  backgroundColor: !form.isSeller ? "#393c5610" : "#fff",
-                  color: !form.isSeller ? "#393c56" : "#6b7280",
+                  borderColor: !form.isSeller ? "#151c5c" : "#e5e7eb",
+                  backgroundColor: !form.isSeller ? "#151c5c10" : "#fff",
+                  color: !form.isSeller ? "#151c5c" : "#6b7280",
                 }}
                 className="py-3 rounded-xl border-2 text-sm font-medium transition-all"
               >
@@ -215,9 +215,9 @@ export default function Register() {
                 type="button"
                 onClick={() => setForm({ ...form, isSeller: true })}
                 style={{
-                  borderColor: form.isSeller ? "#393c56" : "#e5e7eb",
-                  backgroundColor: form.isSeller ? "#393c5610" : "#fff",
-                  color: form.isSeller ? "#393c56" : "#6b7280",
+                  borderColor: form.isSeller ? "#151c5c" : "#e5e7eb",
+                  backgroundColor: form.isSeller ? "#151c5c10" : "#fff",
+                  color: form.isSeller ? "#151c5c" : "#6b7280",
                 }}
                 className="py-3 rounded-xl border-2 text-sm font-medium transition-all"
               >
@@ -229,7 +229,7 @@ export default function Register() {
             <button
               type="submit"
               disabled={loading}
-              style={{ backgroundColor: "#393c56" }}
+              style={{ backgroundColor: "#151c5c" }}
               className="w-full text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition hover:scale-[1.01] active:scale-[0.99] shadow-lg mt-2"
             >
               {loading ? (
@@ -249,7 +249,7 @@ export default function Register() {
             Already have an account?{" "}
             <Link
               to="/login"
-              style={{ color: "#393c56" }}
+              style={{ color: "#151c5c" }}
               className="font-semibold hover:underline"
             >
               Sign in →

@@ -33,20 +33,20 @@ export default function Login() {
 
   return (
     <div
-      style={{ backgroundColor: "#eeeeed" }}
+      style={{ backgroundColor: "#ffffff" }}
       className="min-h-screen flex items-center justify-center px-4"
     >
       <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 shadow-2xl rounded-3xl overflow-hidden">
 
         {/* Left Side */}
         <div
-          style={{ backgroundColor: "#393c56" }}
+          style={{ backgroundColor: "#151c5c" }}
           className="hidden md:flex flex-col justify-between p-10 text-white"
         >
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-              <span style={{ color: "#393c56" }} className="font-bold text-sm">T</span>
+              <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+              <span style={{ color: "#151c5c" }} className="font-bold text-sm">T</span>
             </div>
             <span className="text-xl font-bold">TeyzixMarket</span>
           </div>
@@ -120,8 +120,8 @@ export default function Login() {
                   placeholder="you@example.com"
                   required
                   className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:border-transparent"
-                  style={{ "--tw-ring-color": "#393c56" }}
-                  onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #393c5640"}
+                  style={{ "--tw-ring-color": "#151c5c" }}
+                  onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #151c5c40"}
                   onBlur={(e) => e.target.style.boxShadow = "none"}
                 />
               </div>
@@ -147,7 +147,7 @@ export default function Login() {
                   placeholder="Enter your password"
                   required
                   className="w-full pl-10 pr-10 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none"
-                  onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #393c5640"}
+                  onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #151c5c40"}
                   onBlur={(e) => e.target.style.boxShadow = "none"}
                 />
                 <button
@@ -164,7 +164,7 @@ export default function Login() {
             <button
               type="submit"
               disabled={loading}
-              style={{ backgroundColor: "#393c56" }}
+              style={{ backgroundColor: "#151c5c" }}
               className="w-full text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition hover:scale-[1.01] active:scale-[0.99] shadow-lg mt-2"
             >
               {loading ? (
@@ -191,7 +191,7 @@ export default function Login() {
             Don't have an account?{" "}
             <Link
               to="/register"
-              style={{ color: "#393c56" }}
+              style={{ color: "#151c5c" }}
               className="font-semibold hover:underline"
             >
               Create one free →

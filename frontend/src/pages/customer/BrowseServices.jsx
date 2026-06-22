@@ -44,11 +44,11 @@ export default function BrowseServices() {
   };
 
   return (
-    <div style={{ backgroundColor: "#eeeeed" }} className="min-h-screen">
+    <div style={{ backgroundColor: "#ffffff" }} className="min-h-screen">
 
       {/* ─── HERO SECTION ─── */}
       <div
-        style={{ backgroundColor: "#393c56" }}
+        style={{ backgroundColor: "#151c5c" }}
         className="relative overflow-hidden px-6 py-20"
       >
         {/* Background Circles */}
@@ -72,9 +72,9 @@ export default function BrowseServices() {
           {/* Heading */}
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
             Find the Perfect
-            <span
+              <span
               className="block mt-1"
-              style={{ color: "#eeeeed" }}
+              style={{ color: "#ffffff" }}
             >
               Freelance Service
             </span>
@@ -100,7 +100,7 @@ export default function BrowseServices() {
               />
             </div>
             <button
-              style={{ backgroundColor: "#eeeeed", color: "#393c56" }}
+              style={{ backgroundColor: "#ffffff", color: "#151c5c" }}
               className="px-6 py-4 rounded-2xl font-bold text-sm shadow-lg hover:opacity-90 transition hover:scale-105 whitespace-nowrap"
             >
               Search →
@@ -146,9 +146,9 @@ export default function BrowseServices() {
           <button
             onClick={() => setCategory("")}
             style={{
-              backgroundColor: category === "" ? "#393c56" : "#fff",
+              backgroundColor: category === "" ? "#151c5c" : "#fff",
               color:           category === "" ? "#fff"    : "#1a1a2e",
-              borderColor:     category === "" ? "#393c56" : "#e5e0d8",
+              borderColor:     category === "" ? "#151c5c" : "#e5e0d8",
             }}
             className="flex flex-col items-center gap-1 p-3 rounded-2xl border hover:border-[#535DCA] transition text-center"
           >
@@ -156,13 +156,13 @@ export default function BrowseServices() {
             <span className="text-xs font-medium">All</span>
           </button>
           {categories.map((cat) => (
-            <button
+              <button
               key={cat.label}
               onClick={() => setCategory(cat.label)}
               style={{
-                backgroundColor: category === cat.label ? "#393c56" : "#fff",
+                backgroundColor: category === cat.label ? "#151c5c" : "#fff",
                 color:           category === cat.label ? "#fff"    : "#1a1a2e",
-                borderColor:     category === cat.label ? "#393c56" : "#e5e0d8",
+                borderColor:     category === cat.label ? "#151c5c" : "#e5e0d8",
               }}
               className="flex flex-col items-center gap-1 p-3 rounded-2xl border hover:border-[#535DCA] transition text-center"
             >
@@ -184,9 +184,9 @@ export default function BrowseServices() {
 
         {/* ─── SERVICES GRID ─── */}
         {loading ? (
-          <div className="flex justify-center py-20">
+            <div className="flex justify-center py-20">
             <div
-              style={{ borderColor: "#393c56" }}
+              style={{ borderColor: "#151c5c" }}
               className="w-10 h-10 border-4 border-t-transparent rounded-full animate-spin"
             />
           </div>
@@ -234,7 +234,7 @@ export default function BrowseServices() {
                   {/* Provider */}
                   <div className="flex items-center gap-2 mb-3">
                     <div
-                      style={{ backgroundColor: "#393c56" }}
+                      style={{ backgroundColor: "#151c5c" }}
                       className="w-7 h-7 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0"
                     >
                       {service.providerId?.username?.charAt(0).toUpperCase()}
@@ -263,7 +263,7 @@ export default function BrowseServices() {
                   {/* Footer */}
                   <div className="flex justify-between items-center pt-3 border-t border-[#e5e0d8]">
                     <span
-                      style={{ backgroundColor: "#535DCA10", color: "#393c56" }}
+                      style={{ backgroundColor: "#535DCA10", color: "#151c5c" }}
                       className="text-xs px-2 py-1 rounded-lg font-medium"
                     >
                       ⏱ {service.deliveryTime} days
@@ -271,7 +271,7 @@ export default function BrowseServices() {
                     <div className="text-right">
                       <p className="text-xs text-gray-400">Starting at</p>
                       <p
-                        style={{ color: "#393c56" }}
+                        style={{ color: "#151c5c" }}
                         className="font-bold text-base"
                       >
                         ${service.price}
@@ -312,7 +312,7 @@ export default function BrowseServices() {
                     {item.emoji}
                   </div>
                   <span
-                    style={{ color: "#393c56" }}
+                    style={{ color: "#151c5c" }}
                     className="text-xs font-bold"
                   >
                     Step {item.step}
@@ -331,7 +331,7 @@ export default function BrowseServices() {
 
         {/* ─── CTA BANNER ─── */}
         <div
-          style={{ backgroundColor: "#393c56" }}
+          style={{ backgroundColor: "#151c5c" }}
           className="rounded-3xl p-10 text-center relative overflow-hidden mb-8"
         >
           <div
@@ -348,7 +348,7 @@ export default function BrowseServices() {
             <button
               onClick={() => navigate("/register")}
               className="bg-white font-semibold text-sm px-6 py-3 rounded-xl hover:opacity-90 transition hover:scale-105"
-              style={{ color: "#393c56" }}
+              style={{ color: "#151c5c" }}
             >
               Join as Customer →
             </button>
@@ -369,7 +369,7 @@ export default function BrowseServices() {
       >
         <div className="flex items-center justify-center gap-2 mb-4">
           <div
-            style={{ backgroundColor: "#393c56" }}
+            style={{ backgroundColor: "#151c5c" }}
             className="w-8 h-8 rounded-lg flex items-center justify-center"
           >
             <span className="text-white font-bold text-sm">T</span>

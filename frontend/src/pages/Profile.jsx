@@ -129,16 +129,16 @@ export default function Profile() {
   };
 
   if (loading) return (
-    <div style={{ backgroundColor: "#eeeeed" }} className="min-h-screen flex items-center justify-center">
-      <div style={{ borderColor: "#393c56" }} className="w-10 h-10 border-4 border-t-transparent rounded-full animate-spin" />
+    <div style={{ backgroundColor: "#ffffff" }} className="min-h-screen flex items-center justify-center">
+      <div style={{ borderColor: "#151c5c" }} className="w-10 h-10 border-4 border-t-transparent rounded-full animate-spin" />
     </div>
   );
 
   return (
-    <div style={{ backgroundColor: "#eeeeed" }} className="min-h-screen">
+    <div style={{ backgroundColor: "#ffffff" }} className="min-h-screen">
 
       {/* Header Banner */}
-      <div style={{ backgroundColor: "#393c56" }} className="px-6 py-10">
+      <div style={{ backgroundColor: "#151c5c" }} className="px-6 py-10">
         <div className="max-w-4xl mx-auto flex items-center gap-6">
 
           {/* Avatar */}
@@ -223,8 +223,8 @@ export default function Profile() {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              style={{
-                backgroundColor: activeTab === tab ? "#393c56" : "transparent",
+                style={{
+                backgroundColor: activeTab === tab ? "#151c5c" : "transparent",
                 color: activeTab === tab ? "#fff" : "#6b7280",
               }}
               className="px-5 py-2 rounded-xl text-sm font-medium transition-all"
@@ -310,7 +310,7 @@ export default function Profile() {
                       />
                     ) : (
                       <div
-                        style={{ backgroundColor: "#393c56" }}
+                        style={{ backgroundColor: "#151c5c" }}
                         className="w-full h-full flex items-center justify-center text-white font-bold text-xl"
                       >
                         {user?.username?.charAt(0).toUpperCase()}
@@ -318,7 +318,7 @@ export default function Profile() {
                     )}
                   </div>
                   <label
-                    style={{ borderColor: "#393c56", color: "#393c56" }}
+                    style={{ borderColor: "#151c5c", color: "#151c5c" }}
                     className="cursor-pointer border-2 border-dashed px-4 py-2 rounded-xl text-sm font-medium hover:opacity-70 transition"
                   >
                     Choose Photo
@@ -343,7 +343,7 @@ export default function Profile() {
                   value={form.bio}
                   onChange={(e) => setForm({ ...form, bio: e.target.value })}
                   className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none"
-                  onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #393c5640"}
+                  onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #151c5c40"}
                   onBlur={(e) => e.target.style.boxShadow = "none"}
                 />
               </div>
@@ -360,7 +360,7 @@ export default function Profile() {
                     value={form.skills}
                     onChange={(e) => setForm({ ...form, skills: e.target.value })}
                     className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none"
-                    onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #393c5640"}
+                    onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #151c5c40"}
                     onBlur={(e) => e.target.style.boxShadow = "none"}
                   />
                 </div>
@@ -378,7 +378,7 @@ export default function Profile() {
                     value={form.experience}
                     onChange={(e) => setForm({ ...form, experience: e.target.value })}
                     className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none"
-                    onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #393c5640"}
+                    onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #151c5c40"}
                     onBlur={(e) => e.target.style.boxShadow = "none"}
                   />
                 </div>
@@ -408,7 +408,7 @@ export default function Profile() {
                           socialLinks: { ...form.socialLinks, [item.key]: e.target.value },
                         })}
                         className="w-full pl-10 pr-4 border border-gray-200 rounded-xl py-3 text-sm focus:outline-none"
-                        onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #393c5640"}
+                        onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #151c5c40"}
                         onBlur={(e) => e.target.style.boxShadow = "none"}
                       />
                     </div>
@@ -420,7 +420,7 @@ export default function Profile() {
               <button
                 type="submit"
                 disabled={updating}
-                style={{ backgroundColor: "#393c56" }}
+                style={{ backgroundColor: "#151c5c" }}
                 className="w-full text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition"
               >
                 {updating ? (
@@ -464,7 +464,7 @@ export default function Profile() {
                       />
                     ) : (
                       <div
-                        style={{ backgroundColor: "#393c5615" }}
+                        style={{ backgroundColor: "#151c5c15" }}
                         className="w-full h-40 flex items-center justify-center text-4xl"
                       >
                         🖼️
@@ -502,7 +502,7 @@ export default function Profile() {
                   onChange={(e) => setPortfolioForm({ ...portfolioForm, title: e.target.value })}
                   required
                   className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none"
-                  onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #393c5640"}
+                  onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #151c5c40"}
                   onBlur={(e) => e.target.style.boxShadow = "none"}
                 />
                 <textarea
@@ -511,11 +511,11 @@ export default function Profile() {
                   value={portfolioForm.description}
                   onChange={(e) => setPortfolioForm({ ...portfolioForm, description: e.target.value })}
                   className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none"
-                  onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #393c5640"}
+                  onFocus={(e) => e.target.style.boxShadow = "0 0 0 2px #151c5c40"}
                   onBlur={(e) => e.target.style.boxShadow = "none"}
                 />
                 <label
-                  style={{ borderColor: "#393c56", color: "#393c56" }}
+                  style={{ borderColor: "#151c5c", color: "#151c5c" }}
                   className="cursor-pointer border-2 border-dashed px-4 py-3 rounded-xl text-sm font-medium hover:opacity-70 transition flex items-center gap-2 justify-center"
                 >
                   📸 Choose Image
@@ -534,7 +534,7 @@ export default function Profile() {
                 <button
                   type="submit"
                   disabled={addingPortfolio}
-                  style={{ backgroundColor: "#393c56" }}
+                  style={{ backgroundColor: "#151c5c" }}
                   className="w-full text-white py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition"
                 >
                   {addingPortfolio ? "Adding..." : "Add to Portfolio →"}

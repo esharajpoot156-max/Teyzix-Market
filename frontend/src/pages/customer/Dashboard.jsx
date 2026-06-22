@@ -52,10 +52,10 @@ export default function CustomerDashboard() {
   const earnings  = completed.reduce((sum, r) => sum + r.budget, 0);
 
   return (
-    <div style={{ backgroundColor: "#eeeeed" }} className="min-h-screen">
+    <div style={{ backgroundColor: "#ffffff" }} className="min-h-screen">
 
       {/* Header Banner */}
-      <div style={{ backgroundColor: "#393c56" }} className="px-6 py-8">
+      <div style={{ backgroundColor: "#151c5c" }} className="px-6 py-8">
         <div className="max-w-5xl mx-auto">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-4">
@@ -103,7 +103,7 @@ export default function CustomerDashboard() {
           <button
             onClick={() => setActiveTab("active")}
             style={{
-              backgroundColor: activeTab === "active" ? "#393c56" : "transparent",
+              backgroundColor: activeTab === "active" ? "#151c5c" : "transparent",
               color: activeTab === "active" ? "#fff" : "#6b7280",
             }}
             className="px-5 py-2 rounded-xl text-sm font-medium transition-all"
@@ -113,7 +113,7 @@ export default function CustomerDashboard() {
           <button
             onClick={() => setActiveTab("completed")}
             style={{
-              backgroundColor: activeTab === "completed" ? "#393c56" : "transparent",
+              backgroundColor: activeTab === "completed" ? "#151c5c" : "transparent",
               color: activeTab === "completed" ? "#fff" : "#6b7280",
             }}
             className="px-5 py-2 rounded-xl text-sm font-medium transition-all"
@@ -125,8 +125,8 @@ export default function CustomerDashboard() {
         {/* Loading */}
         {loading ? (
           <div className="flex justify-center py-20">
-            <div
-              style={{ borderColor: "#393c56" }}
+              <div
+              style={{ borderColor: "#151c5c" }}
               className="w-10 h-10 border-4 border-t-transparent rounded-full animate-spin"
             />
           </div>
@@ -145,7 +145,7 @@ export default function CustomerDashboard() {
                 </p>
                 <button
                   onClick={() => navigate("/")}
-                  style={{ backgroundColor: "#393c56" }}
+                  style={{ backgroundColor: "#151c5c" }}
                   className="text-white px-6 py-3 rounded-xl font-medium text-sm hover:opacity-90 transition"
                 >
                   Browse Services →
@@ -162,7 +162,7 @@ export default function CustomerDashboard() {
                       <div className="flex gap-4">
                         {/* Icon */}
                         <div
-                          style={{ backgroundColor: "#393c5615" }}
+                          style={{ backgroundColor: "#151c5c15" }}
                           className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl flex-shrink-0"
                         >
                           📋
@@ -209,7 +209,7 @@ export default function CustomerDashboard() {
                       <div className="w-full bg-gray-100 rounded-full h-2">
                         <div
                           style={{
-                            backgroundColor: "#393c56",
+                            backgroundColor: "#151c5c",
                             width:
                               req.status === "Pending"     ? "20%" :
                               req.status === "Accepted"    ? "40%" :
