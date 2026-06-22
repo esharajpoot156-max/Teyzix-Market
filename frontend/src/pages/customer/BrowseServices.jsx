@@ -44,7 +44,7 @@ export default function BrowseServices() {
   };
 
   return (
-    <div style={{ backgroundColor: "#FCF5EE" }} className="min-h-screen">
+    <div style={{ backgroundColor: "#eeeeed" }} className="min-h-screen">
 
       {/* ─── HERO SECTION ─── */}
       <div
@@ -74,7 +74,7 @@ export default function BrowseServices() {
             Find the Perfect
             <span
               className="block mt-1"
-              style={{ color: "#FCF5EE" }}
+              style={{ color: "#eeeeed" }}
             >
               Freelance Service
             </span>
@@ -100,7 +100,7 @@ export default function BrowseServices() {
               />
             </div>
             <button
-              style={{ backgroundColor: "#FCF5EE", color: "#393c56" }}
+              style={{ backgroundColor: "#eeeeed", color: "#393c56" }}
               className="px-6 py-4 rounded-2xl font-bold text-sm shadow-lg hover:opacity-90 transition hover:scale-105 whitespace-nowrap"
             >
               Search →

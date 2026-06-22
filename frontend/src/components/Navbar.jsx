@@ -52,7 +52,7 @@ export default function Navbar() {
 
   return (
     <nav
-      style={{ backgroundColor: "#FCF5EE" }}
+      style={{ backgroundColor: "#eeeeed" }}
       className={`sticky top-0 z-50 border-b border-[#e5e0d8] transition-all duration-300 ${
         scrolled ? "shadow-lg" : "shadow-none"
       }`}
@@ -226,7 +226,7 @@ export default function Navbar() {
                     <Link
                       to="/profile"
                       onClick={() => setDropdownOpen(false)}
-                      className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[#FCF5EE] transition"
+                      className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[#eeeeed] transition"
                       style={{ color: "#1a1a2e" }}
                     >
                       <span>👤</span> My Profile
@@ -236,7 +236,7 @@ export default function Navbar() {
                       <Link
                         to="/dashboard"
                         onClick={() => setDropdownOpen(false)}
-                        className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[#FCF5EE] transition"
+                        className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[#eeeeed] transition"
                         style={{ color: "#1a1a2e" }}
                       >
                         <span>📋</span> My Requests
@@ -247,7 +247,7 @@ export default function Navbar() {
                       <Link
                         to="/provider/dashboard"
                         onClick={() => setDropdownOpen(false)}
-                        className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[#FCF5EE] transition"
+                        className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[#eeeeed] transition"
                         style={{ color: "#1a1a2e" }}
                       >
                         <span>💼</span> My Projects
@@ -291,7 +291,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        style={{ backgroundColor: "#FCF5EE", borderColor: "#e5e0d8" }}
+        style={{ backgroundColor: "#eeeeed", borderColor: "#e5e0d8" }}
         className={`md:hidden border-t px-6 overflow-hidden transition-all duration-300 ${
           menuOpen ? "max-h-96 py-4" : "max-h-0"
         }`}

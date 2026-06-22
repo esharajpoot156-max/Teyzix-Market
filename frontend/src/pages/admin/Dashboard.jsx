@@ -63,7 +63,7 @@ export default function AdminDashboard() {
   const tabs = ["overview", "users", "services", "requests"];
 
   return (
-    <div style={{ backgroundColor: "#FCF5EE" }} className="min-h-screen">
+    <div style={{ backgroundColor: "#eeeeed" }} className="min-h-screen">
 
       {/* Header Banner */}
       <div style={{ backgroundColor: "#393c56" }} className="px-6 py-8">
@@ -230,7 +230,7 @@ export default function AdminDashboard() {
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead style={{ backgroundColor: "#FCF5EE" }}>
+                    <thead style={{ backgroundColor: "#eeeeed" }}>
                       <tr>
                         <th className="text-left px-4 py-3 text-gray-500 font-medium">User</th>
                         <th className="text-left px-4 py-3 text-gray-500 font-medium">Email</th>
@@ -241,7 +241,7 @@ export default function AdminDashboard() {
                     </thead>
                     <tbody>
                       {stats.users.map((u) => (
-                        <tr key={u._id} className="border-t border-[#e5e0d8] hover:bg-[#FCF5EE] transition">
+                        <tr key={u._id} className="border-t border-[#e5e0d8] hover:bg-[#eeeeed] transition">
                           <td className="px-4 py-3">
                             <div className="flex items-center gap-2">
                               <div
@@ -302,7 +302,7 @@ export default function AdminDashboard() {
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead style={{ backgroundColor: "#FCF5EE" }}>
+                    <thead style={{ backgroundColor: "#eeeeed" }}>
                       <tr>
                         <th className="text-left px-4 py-3 text-gray-500 font-medium">Title</th>
                         <th className="text-left px-4 py-3 text-gray-500 font-medium">Category</th>
@@ -314,7 +314,7 @@ export default function AdminDashboard() {
                     </thead>
                     <tbody>
                       {stats.services.map((s) => (
-                        <tr key={s._id} className="border-t border-[#e5e0d8] hover:bg-[#FCF5EE] transition">
+                        <tr key={s._id} className="border-t border-[#e5e0d8] hover:bg-[#eeeeed] transition">
                           <td className="px-4 py-3">
                             <p style={{ color: "#1a1a2e" }} className="font-medium line-clamp-1">
                               {s.title}
@@ -363,7 +363,7 @@ export default function AdminDashboard() {
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead style={{ backgroundColor: "#FCF5EE" }}>
+                    <thead style={{ backgroundColor: "#eeeeed" }}>
                       <tr>
                         <th className="text-left px-4 py-3 text-gray-500 font-medium">Service</th>
                         <th className="text-left px-4 py-3 text-gray-500 font-medium">Customer</th>
@@ -375,7 +375,7 @@ export default function AdminDashboard() {
                     </thead>
                     <tbody>
                       {stats.requests.map((r) => (
-                        <tr key={r._id} className="border-t border-[#e5e0d8] hover:bg-[#FCF5EE] transition">
+                        <tr key={r._id} className="border-t border-[#e5e0d8] hover:bg-[#eeeeed] transition">
                           <td className="px-4 py-3">
                             <p style={{ color: "#1a1a2e" }} className="font-medium line-clamp-1">
                               {r.serviceId?.title}

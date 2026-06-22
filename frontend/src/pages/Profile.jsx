@@ -129,13 +129,13 @@ export default function Profile() {
   };
 
   if (loading) return (
-    <div style={{ backgroundColor: "#FCF5EE" }} className="min-h-screen flex items-center justify-center">
+    <div style={{ backgroundColor: "#eeeeed" }} className="min-h-screen flex items-center justify-center">
       <div style={{ borderColor: "#393c56" }} className="w-10 h-10 border-4 border-t-transparent rounded-full animate-spin" />
     </div>
   );
 
   return (
-    <div style={{ backgroundColor: "#FCF5EE" }} className="min-h-screen">
+    <div style={{ backgroundColor: "#eeeeed" }} className="min-h-screen">
 
       {/* Header Banner */}
       <div style={{ backgroundColor: "#393c56" }} className="px-6 py-10">

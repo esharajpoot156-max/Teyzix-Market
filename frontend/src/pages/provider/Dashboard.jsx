@@ -87,7 +87,7 @@ export default function ProviderDashboard() {
   const earnings  = delivered.reduce((sum, r) => sum + r.budget, 0);
 
   return (
-    <div style={{ backgroundColor: "#FCF5EE" }} className="min-h-screen">
+    <div style={{ backgroundColor: "#eeeeed" }} className="min-h-screen">
 
       {/* Header Banner */}
       <div style={{ backgroundColor: "#393c56" }} className="px-6 py-8">
@@ -219,7 +219,7 @@ export default function ProviderDashboard() {
 
                   {/* Requirements */}
                   <div
-                    style={{ backgroundColor: "#FCF5EE" }}
+                    style={{ backgroundColor: "#eeeeed" }}
                     className="rounded-xl p-3 mb-4"
                   >
                     <p className="text-xs text-gray-500 font-medium mb-1">Requirements:</p>

@@ -95,19 +95,19 @@ export default function ServiceDetail() {
   };
 
   if (loading) return (
-    <div style={{ backgroundColor: "#FCF5EE" }} className="min-h-screen flex items-center justify-center">
+    <div style={{ backgroundColor: "#eeeeed" }} className="min-h-screen flex items-center justify-center">
       <div style={{ borderColor: "#535DCA" }} className="w-10 h-10 border-4 border-t-transparent rounded-full animate-spin" />
     </div>
   );
 
   if (!service) return (
-    <div style={{ backgroundColor: "#FCF5EE" }} className="min-h-screen flex items-center justify-center">
+    <div style={{ backgroundColor: "#eeeeed" }} className="min-h-screen flex items-center justify-center">
       <p style={{ color: "#1a1a2e" }} className="text-xl font-semibold">Service not found!</p>
     </div>
   );
 
   return (
-    <div style={{ backgroundColor: "#FCF5EE" }} className="min-h-screen">
+    <div style={{ backgroundColor: "#eeeeed" }} className="min-h-screen">
       <div className="max-w-6xl mx-auto px-6 py-10">
 
         {/* Back Button */}
@@ -207,7 +207,7 @@ export default function ServiceDetail() {
                   {service.tags.map((tag, i) => (
                     <span
                       key={i}
-                      style={{ backgroundColor: "#FCF5EE", color: "#535DCA" }}
+                      style={{ backgroundColor: "#eeeeed", color: "#535DCA" }}
                       className="text-xs px-3 py-1 rounded-full border border-[#e5e0d8]"
                     >
                       #{tag}

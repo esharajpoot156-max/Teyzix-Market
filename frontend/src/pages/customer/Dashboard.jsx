@@ -52,7 +52,7 @@ export default function CustomerDashboard() {
   const earnings  = completed.reduce((sum, r) => sum + r.budget, 0);
 
   return (
-    <div style={{ backgroundColor: "#FCF5EE" }} className="min-h-screen">
+    <div style={{ backgroundColor: "#eeeeed" }} className="min-h-screen">
 
       {/* Header Banner */}
       <div style={{ backgroundColor: "#393c56" }} className="px-6 py-8">

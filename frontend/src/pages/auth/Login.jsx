@@ -33,7 +33,7 @@ export default function Login() {
 
   return (
     <div
-      style={{ backgroundColor: "#FCF5EE" }}
+      style={{ backgroundColor: "#eeeeed" }}
       className="min-h-screen flex items-center justify-center px-4"
     >
       <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 shadow-2xl rounded-3xl overflow-hidden">

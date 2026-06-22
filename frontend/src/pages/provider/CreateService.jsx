@@ -54,7 +54,7 @@ export default function CreateService() {
   };
 
   return (
-    <div style={{ backgroundColor: "#FCF5EE" }} className="min-h-screen">
+    <div style={{ backgroundColor: "#eeeeed" }} className="min-h-screen">
 
       {/* Header */}
       <div style={{ backgroundColor: "#393c56" }} className="px-6 py-8">
