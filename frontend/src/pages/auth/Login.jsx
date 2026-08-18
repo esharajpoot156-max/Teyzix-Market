@@ -25,7 +25,12 @@ export default function Login() {
       else if (user.role === "admin") navigate("/admin");
       else navigate("/dashboard");
     } catch (err) {
-      setError(err.response?.data?.message || "Login failed!");
+      const message = err.response?.data?.message || "Login failed!";
+      setError(message);
+
+      if (err.response?.status === 403) {
+        navigate("/verify-otp", { state: { email: form.email } });
+      }
     } finally {
       setLoading(false);
     }
