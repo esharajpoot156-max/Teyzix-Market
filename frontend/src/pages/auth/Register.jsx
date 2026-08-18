@@ -27,7 +27,7 @@ export default function Register() {
     setError("");
     try {
       await register(form);
-      navigate("/login");
+      navigate("/verify-otp", { state: { email: form.email } });
     } catch (err) {
       setError(err.response?.data?.message || "Registration failed!");
     } finally {

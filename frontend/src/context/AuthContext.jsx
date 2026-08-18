@@ -12,7 +12,15 @@ export const AuthProvider = ({ children }) => {
     const res = await axiosInstance.post("/auth/register", data);
     return res.data;
   };
+    const verifyOtp = async (data) => {
+    const res = await axiosInstance.post("/auth/verify-otp", data);
+    return res.data;
+  };
 
+  const resendOtp = async (data) => {
+    const res = await axiosInstance.post("/auth/resend-otp", data);
+    return res.data;
+  };
   const login = async (data) => {
     const res = await axiosInstance.post("/auth/login", data);
     localStorage.setItem("user", JSON.stringify(res.data));

@@ -4,6 +4,7 @@ import { useAuth } from "../context/AuthContext";
 // Auth Pages
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
+import VerifyOtp from "../pages/auth/VerifyOtp";
 
 // Customer Pages
 import CustomerDashboard from "../pages/customer/Dashboard";
@@ -34,6 +35,7 @@ export default function AppRoutes() {
       <Route path="/"             element={<BrowseServices />} />
       <Route path="/login"        element={<Login />} />
       <Route path="/register"     element={<Register />} />
+      <Route path="/verify-otp"   element={<VerifyOtp />} />
       <Route path="/services/:id" element={<ServiceDetail />} />
 
       {/* Profile Route */}
