@@ -1,8 +1,7 @@
+import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import dotenv from "dotenv";
-dotenv.config();
 import connectDB from "./utilis/db.js";
 import authRoute from "./routes/auth.route.js";
 import userRoute from "./routes/user.route.js";
