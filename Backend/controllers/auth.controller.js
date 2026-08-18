@@ -1,6 +1,9 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import User from "../models/user.model.js";
+import { sendOTPEmail } from "../utilis/sendEmail.js";
+
+const generateOTP = () => Math.floor(100000 + Math.random() * 900000).toString();
 
 // ✅ Register
 export const register = async (req, res) => {
@@ -16,6 +19,9 @@ export const register = async (req, res) => {
     // Password hash karo
     const hashedPassword = await bcrypt.hash(password, 10);
 
+    const otp = generateOTP();
+    const otpExpiry = new Date(Date.now() + 10 * 60 * 1000); // 10 min
+
     const newUser = new User({
       username,
       email,
@@ -23,10 +29,84 @@ export const register = async (req, res) => {
       phoneNumber,
       isSeller,
       role: isSeller ? "provider" : "customer",
+      isVerified: false,
+      otp,
+      otpExpiry,
     });
 
     await newUser.save();
-    res.status(201).json({ message: "User registered successfully!" });
+
+    await sendOTPEmail(email, otp);
+
+    res.status(201).json({ message: "User registered! OTP sent to email.", email });
+
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+// ✅ Verify OTP
+export const verifyOtp = async (req, res) => {
+  try {
+    const { email, otp } = req.body;
+
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: "User not found!" });
+    }
+
+    if (user.isVerified) {
+      return res.status(400).json({ message: "User already verified!" });
+    }
+
+    if (!user.otp || !user.otpExpiry) {
+      return res.status(400).json({ message: "No OTP found, please request a new one." });
+    }
+
+    if (user.otpExpiry < new Date()) {
+      return res.status(400).json({ message: "OTP expired, please request a new one." });
+    }
+
+    if (user.otp !== otp) {
+      return res.status(400).json({ message: "Invalid OTP!" });
+    }
+
+    user.isVerified = true;
+    user.otp = null;
+    user.otpExpiry = null;
+    await user.save();
+
+    res.status(200).json({ message: "Email verified successfully!" });
+
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+// ✅ Resend OTP
+export const resendOtp = async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: "User not found!" });
+    }
+
+    if (user.isVerified) {
+      return res.status(400).json({ message: "User already verified!" });
+    }
+
+    const otp = generateOTP();
+    const otpExpiry = new Date(Date.now() + 10 * 60 * 1000);
+
+    user.otp = otp;
+    user.otpExpiry = otpExpiry;
+    await user.save();
+
+    await sendOTPEmail(email, otp);
+
+    res.status(200).json({ message: "New OTP sent to email." });
 
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -48,6 +128,11 @@ export const login = async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(400).json({ message: "Wrong password!" });
+    }
+
+    // Verified check karo
+    if (!user.isVerified) {
+      return res.status(403).json({ message: "Please verify your email before logging in.", email: user.email });
     }
 
     // Token banao
