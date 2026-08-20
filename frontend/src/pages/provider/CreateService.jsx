@@ -13,6 +13,8 @@ export default function CreateService() {
     deliveryTime: "",
     tags: "",
   });
+  const [images, setImages] = useState([]);
+  const [previews, setPreviews] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -30,21 +32,36 @@ export default function CreateService() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const handleImageChange = (e) => {
+    const files = Array.from(e.target.files).slice(0, 5);
+    setImages(files);
+    setPreviews(files.map((file) => URL.createObjectURL(file)));
+  };
+
+  const removeImage = (index) => {
+    const newImages = images.filter((_, i) => i !== index);
+    const newPreviews = previews.filter((_, i) => i !== index);
+    setImages(newImages);
+    setPreviews(newPreviews);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
     try {
-      const serviceData = {
-        title:        form.title,
-        description:  form.description,
-        category:     form.category,
-        price:        Number(form.price),
-        deliveryTime: Number(form.deliveryTime),
-        tags:         form.tags,
-      };
+      const formData = new FormData();
+      formData.append("title", form.title);
+      formData.append("description", form.description);
+      formData.append("category", form.category);
+      formData.append("price", Number(form.price));
+      formData.append("deliveryTime", Number(form.deliveryTime));
+      formData.append("tags", form.tags);
+      images.forEach((img) => formData.append("images", img));
 
-      await axiosInstance.post("/services", serviceData);
+      await axiosInstance.post("/services", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
       navigate("/provider/dashboard");
     } catch (err) {
       setError(err.response?.data?.message || err.message || "Something went wrong!");
@@ -214,6 +231,40 @@ export default function CreateService() {
                       #{tag.trim()}
                     </span>
                   )
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Images */}
+          <div className="bg-white rounded-2xl p-5 border border-[#e5e0d8]">
+            <label style={{ color: "#1a1a2e" }} className="block text-sm font-semibold mb-2">
+              🖼️ Service Images (up to 5)
+            </label>
+            <input
+              type="file"
+              accept="image/png, image/jpeg, image/jpg"
+              multiple
+              onChange={handleImageChange}
+              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none"
+            />
+            {previews.length > 0 && (
+              <div className="flex gap-3 flex-wrap mt-3">
+                {previews.map((src, i) => (
+                  <div key={i} className="relative">
+                    <img
+                      src={src}
+                      alt={`preview-${i}`}
+                      className="w-20 h-20 object-cover rounded-xl border border-gray-200"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => removeImage(i)}
+                      className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center"
+                    >
+                      ×
+                    </button>
+                  </div>
                 ))}
               </div>
             )}
