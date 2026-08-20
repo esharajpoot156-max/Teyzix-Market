@@ -8,9 +8,8 @@ const router = express.Router();
 router.get("/", getAllServices);
 router.get("/my", verifyProvider, getProviderServices);
 router.get("/:id", getServiceById);
-router.post("/", verifyProvider, createService);
+router.post("/", verifyProvider, uploadService.array("images", 5), createService);
 router.put("/:id", verifyProvider, updateService);
 router.delete("/:id", verifyProvider, deleteService);
-router.post("/", verifyProvider, uploadService.array("images", 5), createService);
 
 export default router;
