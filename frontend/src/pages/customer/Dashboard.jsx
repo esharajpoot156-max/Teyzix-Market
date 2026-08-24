@@ -221,6 +221,23 @@ export default function CustomerDashboard() {
                         />
                       </div>
                     </div>
+
+                    {/* Payment Section */}
+                    {req.status === "Accepted" && req.paymentStatus !== "Paid" && (
+                      <button
+                        onClick={() => navigate(`/payment/${req._id}`)}
+                        style={{ backgroundColor: "#151c5c" }}
+                        className="mt-4 w-full text-white py-2 rounded-xl text-sm font-semibold hover:opacity-90 transition"
+                      >
+                        💳 Pay Now (${req.budget})
+                      </button>
+                    )}
+                    {req.paymentStatus === "Paid" && (
+                      <div className="mt-4 flex items-center gap-1 text-xs font-medium text-green-600">
+                        <span>✅</span>
+                        <span>Payment Completed</span>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>

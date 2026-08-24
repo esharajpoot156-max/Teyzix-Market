@@ -20,6 +20,7 @@ import AdminDashboard from "../pages/admin/Dashboard";
 
 // Profile
 import Profile from "../pages/Profile";  
+import Payment from "../pages/customer/Payment";
 
 const PrivateRoute = ({ children, role }) => {
   const { user } = useAuth();
@@ -44,6 +45,11 @@ export default function AppRoutes() {
           <Profile />
         </PrivateRoute>
       } />
+      <Route path="/payment/:id" element={
+        <PrivateRoute role="customer">
+          <Payment />
+          </PrivateRoute>
+        } />
 
       {/* Customer Routes */}
       <Route path="/dashboard" element={
