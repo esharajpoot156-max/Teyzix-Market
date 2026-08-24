@@ -1,5 +1,5 @@
 import express from "express";
-import { getAllRequests, createRequest, getMyRequests, getProviderRequests, getSingleRequest, updateStatus } from "../controllers/request.controller.js";
+import { getAllRequests, createRequest, getMyRequests, getProviderRequests, getSingleRequest, updateStatus, createPaymentIntent, confirmPayment } from "../controllers/request.controller.js";
 import { verifyToken, verifyCustomer, verifyProvider, verifyAdmin } from "../Middleware/isAuthentucated.js";
 
 const router = express.Router();
@@ -10,5 +10,7 @@ router.get("/provider", verifyProvider, getProviderRequests);
 router.get("/:id", verifyToken, getSingleRequest);
 router.put("/:id", verifyProvider, updateStatus);
 router.get("/", verifyAdmin, getAllRequests); 
+router.post("/:id/create-payment-intent", verifyCustomer, createPaymentIntent);
+router.post("/:id/confirm-payment", verifyCustomer, confirmPayment)
 
 export default router;

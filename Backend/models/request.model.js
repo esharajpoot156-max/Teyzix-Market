@@ -58,6 +58,21 @@ const requestSchema = new mongoose.Schema({
     type: Date,
     default: null,
     },
+  // Payment tracking
+    paymentStatus: {
+    type: String,
+    enum: ["Unpaid", "Paid"],
+    default: "Unpaid",
+    },
+    paymentIntentId: {
+    type: String,
+    default: null,
+    },
+    paidAt: {
+    type: Date,
+    default: null,
+    },
+
 
 }, { timestamps: true });
 
