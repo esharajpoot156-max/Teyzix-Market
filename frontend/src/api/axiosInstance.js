@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://teyzix-market.onrender.com",
+  baseURL: "https://teyzix-market.onrender.com/api",
   withCredentials: false,
 });
 
